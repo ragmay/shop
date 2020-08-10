@@ -2,6 +2,24 @@ require_relative 'data/product'
 require_relative 'data/book'
 require_relative 'data/film'
 
-leon = Film.new(price: 990, amount: 5)
+products = []
 
-puts "Фильм Леон стоит #{leon.price} руб."
+products << Film.new(
+  title: 'Леон', year: '1994', director: 'Люк Бессон', price: 990, amount: 5
+)
+
+products << Film.new(
+  title: 'Дурак', year: '2014', director: 'Юрий Быков', price: 390, amount: 1
+)
+
+products << Book.new(
+  title: 'Идиот',
+  genre: 'роман',
+  author: 'Федор Достоевский',
+  price: 1500,
+  amount: 10
+)
+
+puts 'Вот какие товары у нас есть:'
+puts
+products.each { |product| puts product }
