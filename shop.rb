@@ -2,24 +2,13 @@ require_relative 'data/product'
 require_relative 'data/book'
 require_relative 'data/film'
 
-products = []
+film = Film.new(title: 'Леон', director: 'Люк Бессон', price: 990)
+film.year = 1994
+film.update(amount: 5)
 
-products << Film.new(
-  title: 'Леон', year: '1994', director: 'Люк Бессон', price: 990, amount: 5
-)
+book = Book.new(title: 'Идиот', genre: 'роман', amount: 10)
+book.author = 'Федька Достоевский'
+book.update(author: 'Фёдор Достоевский', price: 1500)
 
-products << Film.new(
-  title: 'Дурак', year: '2014', director: 'Юрий Быков', price: 390, amount: 1
-)
-
-products << Book.new(
-  title: 'Идиот',
-  genre: 'роман',
-  author: 'Федор Достоевский',
-  price: 1500,
-  amount: 10
-)
-
-puts 'Вот какие товары у нас есть:'
-puts
-products.each { |product| puts product }
+puts film
+puts book
