@@ -11,9 +11,9 @@ class Film < Product
     self.new(
       title: lines[0],
       director: lines[1],
-      year: lines[2].to_i,
-      price: lines[3].to_i,
-      amount: lines[4].to_i
+      year: lines[2],
+      price: lines[3],
+      amount: lines[4]
     )
   end
 

@@ -1,17 +1,12 @@
 require_relative 'data/product'
 require_relative 'data/book'
 require_relative 'data/film'
+require_relative 'data/product_collection'
 
-current_path = File.dirname(__FILE__)
-film = Film.from_file(current_path + '/data/films/01.txt')
-book = Book.from_file(current_path + '/data/books/01.txt')
+collection = ProductCollection.from_dir(File.dirname(__FILE__) + '/data')
 
-puts film
-puts book
+collection.sort!(by: :price, order: :asc)
 
-# Пытаемся вызвать метод from_file у класса Product и ловим ошибку
-begin
-  Product.from_file(current_path + '/data/films/01.txt')
-rescue NotImplementedError
-  puts 'Метод класса Product.from_file не реализован'
+collection.to_a.each do |product|
+  puts product
 end
