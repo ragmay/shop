@@ -20,7 +20,7 @@ while choice != 'x'
 
   choice = STDIN.gets.chomp
 
-  if choice != 'x' && choice.to_i < products.size && choice.to_i >= 0
+  if choice != 'x'
     product = products[choice.to_i]
     total_price += product.buy
   end
